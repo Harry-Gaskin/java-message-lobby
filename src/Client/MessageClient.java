@@ -1,3 +1,5 @@
+package Client;
+
 import java.net.*;
 import java.io.*;
 
@@ -23,7 +25,7 @@ public class MessageClient {
 
         try(
                 Socket socket = new Socket(hostName, portNumber);
-                PrintWriter socketOut = new PrintWriter(socket.getOutputStream());
+                PrintWriter socketOut = new PrintWriter(socket.getOutputStream(), true);
                 BufferedReader socketIn = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))
                 ) {
