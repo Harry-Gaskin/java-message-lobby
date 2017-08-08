@@ -15,7 +15,7 @@ import java.io.*;
 public class MessageClient {
     public static void main(String args[]) {
         if(args.length != 2) {
-            System.err.println("Message client requires command line parameters: <host name> <port number>");
+            System.err.println("Client.MessageClient requires command line parameters: <host name> <port number>");
             System.exit(1);
         }
 

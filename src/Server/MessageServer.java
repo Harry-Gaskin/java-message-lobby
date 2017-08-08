@@ -14,7 +14,7 @@ import java.io.*;
 public class MessageServer {
     public static void main(String args[]) {
         if(args.length != 1) {
-            System.err.println("MessageServer requires command line argument <port number>");
+            System.err.println("Server.MessageServer requires command line argument <port number>");
         }
 
         int portNumber = Integer.parseInt(args[0]);
