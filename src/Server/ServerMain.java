@@ -21,7 +21,7 @@ public class ServerMain {
         int portNumber = Integer.parseInt(args[0]);
 
         try(
-                ServerSocket serverSocket = new ServerSocket(portNumber);
+                ServerSocket serverSocket = new ServerSocket(portNumber)
                 //BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))
                 ) {
             boolean allowingConnections = true;
@@ -34,18 +34,18 @@ public class ServerMain {
         }
     }
 
-    public static class ClientHandlerThread implements Runnable {
+    private static class ClientHandlerThread implements Runnable {
 
         private Socket socket;
 
-        public ClientHandlerThread(Socket socket) {
+        private ClientHandlerThread(Socket socket) {
             this.socket = socket;
         }
 
         @Override
         public void run() {
             try (
-                    PrintWriter out = new PrintWriter(socket.getOutputStream());
+                    PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
             ) {
                 if(in.readLine().equalsIgnoreCase("Hello Server")) {
