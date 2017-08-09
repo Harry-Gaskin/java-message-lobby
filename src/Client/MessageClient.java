@@ -31,6 +31,15 @@ public class MessageClient {
                 ) {
             socketOut.println("Hello Server");
             System.out.println("From Server: " + socketIn.readLine());
+            System.out.println("From Server: " + socketIn.readLine());
+            socketOut.println(stdIn.readLine());
+            System.out.println("From Server: " + socketIn.readLine());
+            System.out.println(socketIn.readLine());
+            socketOut.println(stdIn.readLine());
+            System.out.println(socketIn.readLine());
+            socketOut.println(stdIn.readLine());
+            System.out.println(socketIn.readLine());
+            socketOut.println(stdIn.readLine());
         }
         catch (UnknownHostException e) {
             System.err.println("Could not establish connection with " + hostName + "on port " + portNumber);
